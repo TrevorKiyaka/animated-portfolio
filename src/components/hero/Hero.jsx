@@ -48,7 +48,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>SOFTWARE DEVELOPER</motion.h2>
+          <motion.h2 variants={textVariants}>TREVOR KIYAKA</motion.h2>
           {/* <motion.h1 variants={textVariants}>
             Crafting Digital Experiences that inspire <b whileHover={{color:"orange"}}>Success</b>
           </motion.h1> */}
@@ -59,7 +59,7 @@ const Hero = () => {
                 <motion.div variants={textVariants} className="buttons">
             {/* Use Link from react-scroll for smooth scrolling */}
             <Link to="Portfolio" smooth={true} duration={500}>
-              <motion.button variants={textVariants}>See the Latest Works</motion.button>
+              <motion.button variants={textVariants}>View Portfolio</motion.button>
             </Link>
             <Link to="Contact" smooth={true} duration={500}>
               <motion.button variants={textVariants}>Contact Me</motion.button>

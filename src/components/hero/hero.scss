@@ -26,29 +26,29 @@
         z-index: 5; // Set the z-index for the motion.span element
         font-weight: 700;
         &:hover {
-          color: rebeccapurple; // Add hover effect color here
+          color: orange; // Add hover effect color here
         }
       }
-    //   @include mobile {
-    //     height: 50%;
-    //     width: 100%;
-    //     gap: 20px;
-    //     align-items: center;
-    //     text-align: center;
-    //   }
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
 
       h2 {
         font-size: 30px;
-        color: rebeccapurple;
+        color: orange;
         letter-spacing: 10px;
       }
 
       h1 {
         font-size: 58px;
         font-weight: 300;
-        // @include mobile {
-        //   font-size: 36px;
-        // }
+        @include mobile {
+          font-size: 36px;
+        }
       }
 
       .buttons {
@@ -83,12 +83,12 @@
     top: 0;
     right: 0;
 
-    // @include mobile {
-    //   height: 50%;
-    //   width: 100%;
-    //   top: unset;
-    //   bottom: 0;
-    // }
+    @include mobile {
+      height: 50%;
+      width: 100%;
+      top: unset;
+      bottom: 0;
+    }
 
     img{
       width: 100%;

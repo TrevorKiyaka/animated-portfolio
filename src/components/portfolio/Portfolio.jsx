@@ -5,50 +5,62 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "E-Commerce webapp",
+    title: "E-Commerce WebApp",
     img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, ",
+    link: "https://www.555africa.shop",
   },
   {
     id: 2,
     title: "Restaurant Landing Page",
     img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, ",
+    link: "https://www.555africa.online",
   },
   {
     id: 3,
     title: "Pharmaserv",
     img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, ",
+    link: "https://www.555africa.com",
   },
   {
     id: 4,
     title: "MPESA Paywall",
     img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, ",
+    link: "https://www.mpesapaywall.com",
   },
 ];
 
 const Single = ({ item }) => {
-  const ref = useRef();
+  const ref = useRef(); //use ref as target for each item / project
 
+  //offset not necessary
   const { scrollYProgress } = useScroll({
     target: ref,
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const y = useTransform(
+    scrollYProgress,
+     [0, 1],
+      [-300, 300]
+      );
+
+
 
   return (
-    <section >
+    <section>
       <div className="container">
         <div className="wrapper">
+        {/* ref was determined to be the image container so that they start at same point */}
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
+          <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Demo</button>
+            <button onClick={() => (window.location.href = item.link)}>Visit Website</button>
           </motion.div>
         </div>
       </div>
@@ -58,7 +70,8 @@ const Single = ({ item }) => {
 
 const Portfolio = () => {
   const ref = useRef();
-
+//acts to target as ref for the progress bar as well
+//offset is for allowing each project to take up the window at 100%
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
